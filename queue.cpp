@@ -47,6 +47,12 @@ int main(int argc, char **argv){
         s3.print();      
    }  
 
-
+    int x = 5+0;
+   
+    int &&y =10;
+    
+    Queue<int> obj;
+    obj.Swap(x,y);
+    std::cout<<"x = "<<x<<" y = "<<y<<std::endl;
     return 0;
 }
