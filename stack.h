@@ -21,8 +21,6 @@
 
                 basePtr = new T[max_size]; // Very important, don't remove this causes a seg fault 
 
-             
-
                 for(int i = 0 ;i<max_size;++i){
                         
                         this->basePtr[i] = lhs.basePtr[i]; // copy everything 

@@ -30,13 +30,14 @@ void fill(USTACK &stk){
         }   
     std::cout<<"Done"<<std::endl;
 }
+
 void clear(USTACK & stk){
     if(stk.empty())
         std::cerr << "Stack is empty!" << std::endl;
     else{
         unsigned x;
         while( stk.pop(x))
-        std::cout << std::setw(8) << x << " ";
+            std::cout << std::setw(8) << x << " ";
         std::cout << std::endl;
     }
 }
