@@ -13,7 +13,7 @@
 #include <string>
 int main(int argc, char **argv){
     
-    Queue<int> q1, q2, q3; 
+    Queue<int,10> q1, q2, q3; 
     {
        
         q1.add(42); q1.add(2); q1.add(8);  q1.add(1);
@@ -31,7 +31,7 @@ int main(int argc, char **argv){
         q3.print();
     }
     
-   Queue<std::string> s1,s2,s3;{
+   Queue<std::string,10> s1,s2,s3;{
         s1.add("C++ is awesome"); s1.add("Strings are cool"); s1.add("You are great");
         s1.print();
 
@@ -51,7 +51,7 @@ int main(int argc, char **argv){
    
     int &&y =10;
     
-    Queue<int> obj;
+    Queue<int,10> obj;
     obj.Swap(x,y);
     std::cout<<"x = "<<x<<" y = "<<y<<std::endl;
     return 0;

@@ -3,18 +3,46 @@
 
 #include<iostream>
 
-    template <typename T>
+    template <typename T , int N>
     class Queue { 
         private:
             int size; 
             T* queue; 
         public:
-            Queue():size{0},queue{new T[100]}{}
+            Queue():size{0},queue{new T[N]}{}
 
-            /*~Queue(){
-                delete [] queue;
+            ~Queue(){
+                delete[] queue;
             }
-            */
+            // copy constructor 
+            Queue(const Queue<T,N> &lhs){
+                size = lhs.size;
+
+                queue = new T[N];
+
+                for(int i = 0; i<size;++i){
+                    this->queue[i] = lhs.queue[i];
+                }
+            }
+            // copy assignment 
+            Queue<T,N>& operator=(const Queue<T,N> &lhs){
+                
+                if (this != &lhs){ // Optimize
+
+                    size = lhs.size;
+                    delete [] queue; // release old resourses
+
+                    queue = new T[N];
+
+                    for(int j = 0 ; j<size;++j){
+                        this->queue[j] = lhs.queue[j];
+                    }
+
+                }
+
+                return *this;
+                
+            }
             
             void add(T data){
                 queue[size] = data; 
@@ -32,6 +60,7 @@
                     size--; 
                 } 
             }
+
             void print(){
                 if (size == 0) { 
                     std::cout << "Queue is empty"<<std::endl; 
@@ -42,14 +71,15 @@
                 } 
                 std::cout << std::endl;
             }
-            Queue & operator+(Queue &other){
+
+            Queue<T,N> & operator+(Queue<T,N> &other){
 
                 for(int i=0;i<other.size;++i){
                     this->add(other.queue[i]);
                 }
                 return *this;
             }
-            Queue & operator+=(Queue &other){
+            Queue<T,N> & operator+=(Queue<T,N> &other){
                 *this = *this + other;
                 return *this;
             }
