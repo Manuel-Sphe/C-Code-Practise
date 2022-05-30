@@ -72,15 +72,16 @@
                 std::cout << std::endl;
             }
 
-            Queue<T,N> & operator+(Queue<T,N> &other){
-
-                for(int i=0;i<other.size;++i){
-                    this->add(other.queue[i]);
-                }
-                return *this;
+            Queue<T,N>  operator+(const Queue<T,N> &rhs){
+                Queue results = *this; // to hold the results sum
+               
+                results+=rhs;
+                return rhs;
             }
-            Queue<T,N> & operator+=(Queue<T,N> &other){
-                *this = *this + other;
+            Queue<T,N> & operator+=(const Queue<T,N> &rhs){
+                for(int i = 0;i<rhs.size;++i){
+                    this->add(rhs.queue[i]);
+                }
                 return *this;
             }
             
