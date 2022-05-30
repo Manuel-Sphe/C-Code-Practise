@@ -27,6 +27,13 @@
                 }
             } 
 
+            Stack(Stack<T> && rhs) : basePtr(rhs.basePtr), max_size(rhs.max_size), tip(rhs.tip){ // Move constructor 
+
+                rhs.max_size = 0;
+                rhs.basePtr = nullptr;
+                rhs.tip = 0; 
+            }
+
             ~Stack(){
                 delete[] basePtr;
             }
@@ -47,7 +54,25 @@
                 }
                 return *this;
             } //Copy Assignment 
+            
+            Stack<T> & operator=(Stack<T> && rhs){
+                
+                if(this == &rhs) // optimization
+                    return *this;
+                
 
+                basePtr = rhs.basePtr;
+                max_size = rhs.max_size;
+                tip = rhs.tip;
+
+                rhs.max_size = 0;
+                rhs.basePtr = nullptr;
+                rhs.tip = 0; 
+                
+                return *this;
+
+            }
+            
             // Methods 
 
             bool empty(){ return (tip==0);};
