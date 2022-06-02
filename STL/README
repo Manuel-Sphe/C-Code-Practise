@@ -1,0 +1,13 @@
+C++ practice that Implement  STDL ALGORITHMS  with help of FUNCTORS and LAMDAS
+Three class  :
+   file STL_Class.h - declare and define functors. 
+   class Test_STL.cpp  - main function , uses STL algorithms and uses functor from  STL_Class.h and Lambdas.
+
+COMPILATION use command: $make          
+
+RUNNING use command: $ make run or ./file.exe  
+
+CLEANING use command: $make clean  # clean    
+
+OUTPUT - printed on the command line. 
+                                                                                                                                                                           
