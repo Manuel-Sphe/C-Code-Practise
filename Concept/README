@@ -1,0 +1,16 @@
+Implement Template( class template, function template, partial and specialised template) with
+concept( member function concept, leading or Trailling concept  and typename type concept)
+
+Three class  :
+    solid class Tsewu - Has data  string name pointer and is allocated dynamical . 
+
+   Partial template class Template<T, int Size> - Has pointer T Elements and Implement defined concepts on its member and friend functions
+
+   class concepts_test.cpp  - invoke or tests other classes.
+
+COMPILATION use command: $make               #so we use Makefile, all excutable file will be on the current directory (Assignment_2)
+
+RUNNING use command: $ make run or ./extractor  
+
+CLEANING use command: $make clean  # clean                                                                                                    
+                                                                                                                                                                           
